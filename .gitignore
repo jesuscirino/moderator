@@ -1,2 +1,5 @@
 *~
 *.swp
+*.jso
+conf.json
+node_modules
