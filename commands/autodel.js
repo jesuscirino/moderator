@@ -2,7 +2,7 @@ import embedZero, {mark, down} from "../lib/defaultEmbed";
 
 module.exports = {
     name: 'p',
-    description: 'Recarga cambios en comandos',
+    description: 'Recarga cambios en el código de un comando, sin desconectar el bot, útil para el programador únicamente.',
     args: true,
     async execute(client, message, args) {
         if(!args || args.length < 1) return message.reply(`${mark}Debes colocar el nombre del módulo del comando ${down}`) ;
