@@ -1,0 +1,33 @@
+{
+  "name": "moderator",
+  "version": "1.0.0",
+  "description": "a discord bot for aux task moderation of cervantes",
+  "main": "bot/play.js",
+  "scripts": {
+    "bot": "babel-node --presets env bot/play.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesuscirino/cervantes-moderator.git"
+  },
+  "keywords": [
+    "discord",
+    "cervantes"
+  ],
+  "author": "@jesuscirino",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jesuscirino/cervantes-moderator/issues"
+  },
+  "homepage": "https://github.com/jesuscirino/cervantes-moderator#readme",
+  "dependencies": {
+    "discord.js": "^11.3.0",
+    "node-opus": "^0.2.7",
+    "steem": "^0.7.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.1"
+  }
+}
