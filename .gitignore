@@ -3,3 +3,4 @@
 *.jso
 conf.json
 node_modules
+test
