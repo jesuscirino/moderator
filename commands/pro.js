@@ -6,7 +6,7 @@ module.exports = {
     async execute(client, message, args) {
         if(!args || args.length < 1) return message.reply(`${mark}Debes colocar un número de días ${down}`) ;
         const embed = Object.assign({}, embedZero);
-        embed.title = `El total de mensajes hace ${args[0]} fue:\n`;
+        embed.title = `relación de mensajes hace ${args[0]} días, según horario UTC \n`;
         const cervantes = client.guilds.get(ID_CERVANTES);
         const promoCat  = cervantes.channels.filter(channel => channel.parentID === ID_PROMO);
         let response = promoCat.reduce((a, channel) => a + '\n' + channel.name , promoCat.first().name);
@@ -19,12 +19,21 @@ module.exports = {
         for (let channel of promoCat.values()) {
             emoticon = emoticon === '😎' ? '😌' : '😎';
             await sentMessage.edit(`${emoticon} ${mark} ... procesando ${channel.name} ...${down}`);
+            let collMess = null, last = null;
             const LIM       = 100;
-            let collMess  = await channel.fetchMessages({limit:LIM });
-            let last = collMess.last();
-            let size = 0;
-            collMess = collMess.filter(filt);
-            size    += collMess.size;
+                let size = 0;
+            try{
+                collMess  = await channel.fetchMessages({limit:LIM });
+                last = collMess.last();
+                collMess = collMess.filter(filt);
+                size    += collMess.size;
+                
+            }
+            catch(e){
+                arrayRes[index] = arrayRes[index++] + ' -- ' + size;
+                console.log('empty channel')
+                continue;
+            }
             if (collMess.size === LIM)
                 while(collMess.size === LIM){
 
@@ -44,7 +53,7 @@ module.exports = {
               }
         arrayRes.shift();
         response = arrayRes.join('\n');
-        embed.description = `${mark}  ${response}  ${down}`;
-        await sentMessage.edit(`Se escanearon  ${promoCat.size} canales con ${cm} Mensajes encontrados desde hace ${args[0]} días`, {embed});
+        embed.description = `${mark}    ${down}`;
+        await sentMessage.edit(`Se escanearon  ${promoCat.size} canales con ${cm} Mensajes encontrados desde hace ${args[0]} días ${mark} ${response} ${down}`, {embed});
         },
 };

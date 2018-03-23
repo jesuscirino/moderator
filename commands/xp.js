@@ -10,13 +10,13 @@ module.exports = {
         const cervantes = client.guilds.get(ID_CERVANTES)
         const promoCat  = cervantes.channels.filter(channel => channel.parentID === ID_PROMO)
         const sentMessage = await message.channel.send(`me tardaré varios minutos 😅`)
-        let emoticon = '😌'; let cm = null;let index = 1
+        let emoticon = '😌'; let cm = 0;let index = 1
         for (let channel of promoCat.values()) {
             emoticon = emoticon === '😎' ? '😌' : '😎'
             await sentMessage.edit(`${emoticon} ${mark} ... procesando ${channel.name} ...${down}`)
-            cm = await deleteAllUntilAgo(numOfdays, channel)
+            cm += await deleteAllUntilAgo(numOfdays, channel)
             }
-        embed.description = `${mark}  ${response}  ${down}`
+        embed.description = `${mark} Fin de la depuración ${down}`
         await sentMessage.edit(`Se escanearon  ${promoCat.size} canales y borré ${cm} mensajes más antiguos a ${args[0]} días`, {embed})
         }
 }
