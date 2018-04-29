@@ -1,6 +1,6 @@
 import embedZero, {ID_CERVANTES, ID_PROMO, mark, down, deleteAllUntilAgo} from "../lib/defaultEmbed";
 module.exports = {
-    name: 'xp',
+    name: 'xpro',
     description: 'Borra mensajes de todos los canales categoría [promoción] desde hace [n] días. ',
     async execute(client, message, args) {
         if(!args || args.length < 1) return message.reply(`${mark}Debes colocar un número de días ${down}`) ;
