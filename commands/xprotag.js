@@ -17,6 +17,6 @@ module.exports = {
             cm += await deleteAllUntilAgo(numOfdays, channel, true)
             }
         embed.description = `${mark} Fin de la depuración ${down}`
-        await sentMessage.edit(`Se escanearon  ${promoCat.size} canales y encontré ${cm} post sin TAGS adecuados de hace ${args[0]} días`, {embed})
+        await sentMessage.edit(`Se escanearon  ${promoCat.size} canales y encontré ${cm} post sin TAGS adecuados desde hace ${args[0]} días`, {embed})
         }
 }
