@@ -1,7 +1,7 @@
 import embedZero, {ID_CERVANTES, ID_PROMO, mark, down, deleteAllUntilAgo} from "../lib/defaultEmbed";
 module.exports = {
-    name: 'xpro',
-    description: 'Borra mensajes de todos los canales categoría [promoción] desde hace [n] días. ',
+    name: 'xprotag',
+    description: 'Borra mensajes de todos los canales categoría [promoción] desde hace [n] días. Que no coinsiden con steemit tags, cervantes y spanish',
     async execute(client, message, args) {
         if(!args || args.length < 1) return message.reply(`${mark}Debes colocar un número de días ${down}`) ;
         const numOfdays = args[0]
@@ -14,9 +14,9 @@ module.exports = {
         for (let channel of promoCat.values()) {
             emoticon = emoticon === '😎' ? '😌' : '😎'
             await sentMessage.edit(`${emoticon} ${mark} ... procesando ${channel.name} ...${down}`)
-            cm += await deleteAllUntilAgo(numOfdays, channel, false)
+            cm += await deleteAllUntilAgo(numOfdays, channel, true)
             }
         embed.description = `${mark} Fin de la depuración ${down}`
-        await sentMessage.edit(`Se escanearon  ${promoCat.size} canales y borré ${cm} mensajes más antiguos a ${args[0]} días`, {embed})
+        await sentMessage.edit(`Se escanearon  ${promoCat.size} canales y encontré ${cm} post sin TAGS adecuados de hace ${args[0]} días`, {embed})
         }
 }
