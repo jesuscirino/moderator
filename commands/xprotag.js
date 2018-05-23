@@ -14,7 +14,7 @@ module.exports = {
         for (let channel of promoCat.values()) {
             emoticon = emoticon === '😎' ? '😌' : '😎'
             await sentMessage.edit(`${emoticon} ${mark} ... procesando ${channel.name} ...${down}`)
-            cm += await deleteAllUntilAgo(numOfdays, channel, true)
+            cm += await deleteAllUntilAgo(numOfdays, channel, true, false)
             }
         embed.description = `${mark} Fin de la depuración ${down}`
         await sentMessage.edit(`Se escanearon  ${promoCat.size} canales y encontré ${cm} post sin TAGS adecuados desde hace ${args[0]} días`, {embed})
