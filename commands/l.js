@@ -12,12 +12,12 @@ module.exports = {
         console.log('...emo')
         //const l = cervantes.emojis.map(e => e.toString()).join(" ");
         const l = cervantes.emojis.map(e => e.id).join(" ");
-        //await message.channel.send(l)
-        //const emoIDRobot = cervantes.emojis.find('name','robot~1')
-        //console.log(emoIDRobot.id)
-        //await message.react(emoIDRobot.id)
+        await message.channel.send(l)
+        const emoIDRobot = cervantes.emojis.find('name','moderator')
+        console.log(emoIDRobot.id)
+        await message.react(emoIDRobot.id)
 
-        await message.react('🤖')
+        //await message.react('🤖')
 
         },
 };
