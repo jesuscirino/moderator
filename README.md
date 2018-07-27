@@ -4,8 +4,9 @@ A Discord bot for Cervantes guild
 ```
 git clone https://github.com/jesuscirino/moderator.git
 cd moderator
-yarn
+yarn install
 ```
+
 
 # Updating 
 
