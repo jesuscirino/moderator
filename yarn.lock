@@ -1358,7 +1358,7 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-nan@^2.9.2:
+nan@^2.8.0, nan@^2.9.2:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
 
@@ -1891,6 +1891,10 @@ uuid@^3.1.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
+uws@9.14.0:
+  version "9.14.0"
+  resolved "https://registry.yarnpkg.com/uws/-/uws-9.14.0.tgz#fac8386befc33a7a3705cbd58dc47b430ca4dd95"
+
 v8flags@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/v8flags/-/v8flags-2.1.1.tgz#aab1a1fa30d45f88dd321148875ac02c0b55e5b4"
@@ -1943,3 +1947,9 @@ ws@^4.0.0:
 yallist@^3.0.0, yallist@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.0.2.tgz#8452b4bb7e83c7c188d8041c1a837c773d6d8bb9"
+
+zlib-sync@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/zlib-sync/-/zlib-sync-0.1.4.tgz#510db6ea89040d4ff6fa22cd3936f5c1a2ad0987"
+  dependencies:
+    nan "^2.8.0"
