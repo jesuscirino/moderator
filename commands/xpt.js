@@ -2,9 +2,9 @@ import embedZero, {ID_CERVANTES, ID_STEEMPRESS, mark, down,
     getSteemitLink, getMessagesFrom} from "../lib/defaultEmbed";
 import {getJsonMetadata} from "../lib/steemFunc";
 module.exports = {
-    name: 'spres',
+    name: 'xpt',
     description: 
-    'Borra los mensajes de steempress-links-promo que no contienen tags SPANISH y CERVANTES y NO están publicadas desde STEEMPRESS',
+    'Versión mejorada de xprotag para categoria de promoción',
     async execute(client, message, args) {
         const embed = Object.assign({}, embedZero)
         embed.title = `Depuración de canales de promoción`
