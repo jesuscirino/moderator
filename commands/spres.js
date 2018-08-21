@@ -7,7 +7,7 @@ module.exports = {
     'Borra los mensajes de steempress-links-promo que no contienen tags SPANISH y CERVANTES y NO están publicadas desde STEEMPRESS',
     async execute(client, message, args) {
         const embed = Object.assign({}, embedZero)
-        embed.title = `Depuración de canales de promoción`
+        embed.title = `Depuración de canal steempress`
         const cervantes = client.guilds.get(ID_CERVANTES)
         const chSteemPress  = cervantes.channels.get(ID_STEEMPRESS);
         const emoM = cervantes.emojis.find('name','moderator')
@@ -21,11 +21,13 @@ module.exports = {
             if(post){
                 const {author, permlink} = post
                 const jsonMetadata = await getJsonMetadata(author, permlink)
+                    .catch(e => console.log(e))
                 const {community, tags} = jsonMetadata
                 if(community && tags.includes('cervantes') && tags.includes('spanish')){
                     console.log(`##GOOD ${m.content}`)
                 }
                 else{
+                    counterBads += 1
                     console.log(`$$BAD$ {m.content}`)
                     await m.delete()
                 }

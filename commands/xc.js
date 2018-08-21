@@ -2,7 +2,7 @@ import embedZero, {ID_CERVANTES, mark, down, deleteAllUntilAgo} from "../lib/def
 
 module.exports = {
     name: 'xc',
-    description: 'Borra mensajes de un canal desde hace [n] días. ',
+    description: 'Borra mensajes de un canal [id] desde hace [n] días. ',
     async execute(client, message, args) {
         if(!args || args.length < 2) return message
             .reply(`${mark}Debes colocar un número de días y el ID del canal ${down}`) ;
